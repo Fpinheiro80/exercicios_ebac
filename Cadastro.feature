@@ -8,7 +8,7 @@
 
             Esquema do Cenário: Realizar cadastro dom dados validos
             Dado que estou na página de cadastro da EBAC-SHOP
-            Quando preencher todos os campos e informar o e-mail "<email>"
+            Quando preencher todos os campos e informar o e-mail <email>,<nome>,<sobrenome>,<telefone>
             E clicar no botão "Cadastrar"
             Então o cadastro deve ser realizado com sucesso e devo conseguir finalizar a compra
             Exemplos:
@@ -21,8 +21,7 @@
             Dado que estou na página de cadastro da EBAC-SHOP
             Quando preencher os campos obrigatórios e informar o e-mail inválido "<email>"
             E clicar no botão "Cadastrar"
-            Então o sistema não deve permitir a realização do cadastro
-            E deve exibir uma mensagem de erro informando que o e-mail possui formato inválido.
+            Então o sistema não deve permitir a ação do cadastro e deve exibir uma mensagem de erro
             Exemplos:
             | "email"         |
             | "joaoemail.com" |
@@ -33,8 +32,9 @@
 
             Esquema do Cenário: Tentar realizar cadastro com campos obrigatórios vazios
             Dado que estou na página de cadastro da EBAC-SHOP
-            Quando deixar o campo obrigatório "<campo>" vazio e clicar no botão "Cadastrar"
+            Quando deixar o campo obrigatório <nome>,<E-mail>,<Endereço> vazio e clicar no botão "Cadastrar"
             Então o sistema não deve permitir a realização do cadastro
-            E deve exibir uma mensagem de alerta informando que o campo "<campo>" é obrigatório.
+            E deve exibir uma mensagem de alerta informando que o campo <campo> é obrigatório.
             Exemplos:
-            | "campo" |  | "Nome" |  | "Sobrenome" |  | "E-mail" |  | "Telefone" |  | "Endereço" |
+            | "Nome"  |  | "E-mail" |  | "Endereço"       |
+            | "pedro" |  | "vazio"  |  | "rua joão paulo" |
